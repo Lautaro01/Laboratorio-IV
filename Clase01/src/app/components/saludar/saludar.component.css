@@ -1,0 +1,9 @@
+form {
+    position: relative;
+  
+    width  : 740px;
+    height : 498px;
+    margin : 0 auto;
+    border: 3px;
+    background: #FFF
+  }

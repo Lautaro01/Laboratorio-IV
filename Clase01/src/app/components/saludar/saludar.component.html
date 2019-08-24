@@ -1,0 +1,14 @@
+
+<form *ngIf="flag ; else div2">
+<h3>Datos</h3>
+<input type="text" id="nombre" [(ngModel)]="nombre" name="nombre"><br>
+<input type="text" id="apellido" [(ngModel)]="apellido" name="apellido"><br>
+<button (click)="manejadora()">Boton</button>
+</form>
+
+<ng-template #div2>
+  Nombre: {{nombre}}
+  Apellido: {{apellido}}
+  <h1>puedo llamar el valor de variables en el ts al html.</h1>
+  <button (click)="manejadora()">Boton</button>
+</ng-template>
