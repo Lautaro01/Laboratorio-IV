@@ -14,3 +14,6 @@ _comandos dados en la clase uno de laboratorio IV 22/8_
 ```
  npm i (descarga los paquetes y dependencias necesartrias)
 ```
+```
+ ng generate component nombre (crear un componente o etiqueta)
+```
