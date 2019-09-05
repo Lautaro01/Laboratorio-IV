@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Formulario</title>
+  </head>
+  <body>
+    <div class="formula">
+      <form>
+        <!--Nombre-->
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" placeholder="Nombre">
+          </div>
+        </div>
+          <!--Sexo-->
+        <div class="form-grup row">
+          <label class="col-sm-2 col-form-label">Sexo</label>
+          <div class=col-sm-10>
+          <select class="custom-select" [(ngModel)]="sexo" name="sexo">
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Otros">Otros</option>
+          </select>
+          </div>
+        </div><br>
+          <!--Sueldo-->
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Sueldo</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" placeholder="Sueldo" [(ngModel)]="sueldo" name="sueldo">
+          </div>
+        </div>
+        <!--Edad-->
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Edad</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" [(ngModel)]="edad" placeholder="Edad" name="edad">
+            </div>
+          </div>
+          <!--Licencia-->
+          <div class="form-grup row">
+            <label class="col-sm-2 col-form-label">Licencia</label>
+            <div class=col-sm-10>
+            <select class="custom-select" [(ngModel)]="licencia" name="licencia">
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+            </div>
+          </div><br>
+          <!--Fecha-->
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Fecha</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="fecha" name="fecha" [(ngModel)]="fecha">
+            </div>
+          </div>
+          <!--boton-->
+          <div class="form-group">
+          <div class="col-sm-12">
+            <input type="button" class="btn btn-primary btn-block mt-5" value="enviar" (click)="mandarDatos()">
+          </div>
+        </div>
+      </form>
+  </div>
+  </body>
+</html>

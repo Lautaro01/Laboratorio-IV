@@ -1,0 +1,15 @@
+.formula{
+  margin-top: 5%;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 2%;
+  border-radius: 17px 17px 17px 17px;
+  -moz-border-radius: 17px 17px 17px 17px;
+  -webkit-border-radius: 17px 17px 17px 17px;
+  border: 1px solid #868686;
+  background: rgba(216, 216, 216, 0.459);
+  -webkit-box-shadow: 10px 10px 17px -1px rgba(97,97,97,1);
+-moz-box-shadow: 10px 10px 17px -1px rgba(97,97,97,1);
+box-shadow: 10px 10px 17px -1px rgba(97,97,97,1);
+}
+
