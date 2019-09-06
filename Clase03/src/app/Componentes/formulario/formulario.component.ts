@@ -1,4 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Persona } from 'src/app/Clases/persona';
+import { ListaPersonasService } from 'src/app/Servicios/lista-personas.service';
+
+
 
 @Component({
   selector: 'app-formulario',
@@ -7,23 +11,24 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FormularioComponent implements OnInit {
 
-  @Output()Cargar = new EventEmitter<any>();
-  datos = new Array();
-  nombre: string;
-  sexo: string;
-  sueldo: number;
-  edad: number;
-  licencia: string;
-  fecha: string;
+  constructor(public listaServicio : ListaPersonasService, public personaParam : Persona) {}
 
-  constructor() { }
+  //personaParam : Persona;
 
   ngOnInit() {
   }
 
-  mandarDatos()
+  agregarPersonaLista()
   {
-    console.log(this.nombre + this.sexo);
+
+    this.personaParam = new Persona(this.personaParam.nombre,
+      this.personaParam.sexo,
+      this.personaParam.sueldo,
+      this.personaParam.edad,
+      this.personaParam.licencia,
+      this.personaParam.nacimiento)
+    console.log(this.personaParam);
+    this.listaServicio.setObjInLista(this.personaParam);
   }
 
 }

@@ -1,7 +1,8 @@
 .formula{
-  margin-top: 5%;
-  margin-left: 30%;
-  margin-right: 30%;
+  float: left;
+  margin: 20px;
+  height: 500px;
+  width: 500px;
   padding: 2%;
   border-radius: 17px 17px 17px 17px;
   -moz-border-radius: 17px 17px 17px 17px;

@@ -1,0 +1,24 @@
+<div class="tabla">
+<table class="table">
+    <thead class="thead-dark" style="border: 1px">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Sueldo</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Licencia</th>
+            <th scope="col">Fecha de Nacimiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of listaServ.getLista()">
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.sexo}}</td>
+            <td>{{persona.sueldo}}</td>
+            <td>{{persona.edad}}</td>
+            <td>{{persona.licencia}}</td>
+            <td>{{persona.nacimiento}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
