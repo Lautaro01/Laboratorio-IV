@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <div class="card" style="width: 90%; margin-top: 10%">
+      <h5 class="card-title" style="margin: 1rem">Subir un Auto</h5>
+      <input type="text" name="Marca" class="text-center" id="" style="margin: 0.5rem;" placeholder="Marca" [(ngModel)]="usuario"><br>
+      <input type="text" name="Color" class="text-center" id=""  placeholder="Color" style="margin: 0.5rem;" [(ngModel)]="clave"><br>
+      <input type="text" name="Modelo" class="text-center" id=""  placeholder="Modelo" style="margin: 0.5rem;" [(ngModel)]="clave"><br>
+      <button (click)="ingresar()" class="btn btn-primary" style="margin: 0.5rem;">Agregar Auto</button>
+      <div class="card-footer text-muted">
+        usuario= usuario | clave = 123456
+      </div>
+    </div>
+  </div>
+  <div class="col">
+      <table class="table" style="margin-top: 10%">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+
+        </div>
+
+</div>
+<button (click)="salir()">logout</button>
