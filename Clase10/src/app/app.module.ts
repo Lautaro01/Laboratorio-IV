@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './login/login.service';
 import { HomeComponent } from './home/home.component';
+import { PeticionesService } from './home/peticiones';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, PeticionesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
