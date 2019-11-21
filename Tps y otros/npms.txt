@@ -1,0 +1,5 @@
+npm install firebase @angular/fire --save
+
+npm i ng-recaptcha --save
+
+npm install @auth0/angular-jwt
