@@ -1,0 +1,96 @@
+<div class="container">
+    <app-nombreytipo [nombre]="usuarioActual" [tipo]="'cliente'"></app-nombreytipo>
+    <div class="row">
+    <div class="col">
+        <div class="card carta mt-5">
+            <div class="card-body">
+              <h2 class="card-title text-center">Alta de autos</h2>
+              <form class="form-signin">
+                <div class="form-label-group">
+                    <input type="text" name="patente" class="form-control" placeholder="Patente" [(ngModel)]="auto.patente">
+                  <br>
+                </div>
+  
+                <div class="form-label-group">
+                    <input type="text" name="marca" class="form-control" placeholder="Marca" [(ngModel)]="auto.marca">
+                  <br>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" name="color" class="form-control" placeholder="Color" [(ngModel)]="auto.color">
+                  <br>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" name="kilimetros" class="form-control" placeholder="Kilimetros" [(ngModel)]="auto.kilometros">
+                  <br>
+                </div>
+                <div class="form-label-group">
+                    <label for="tipo">Tipo:</label>
+                    <select name="Tipo" class="custom-select" [(ngModel)]="auto.tipo">
+                            <option value="auto" selected>Auto</option> 
+                            <option value="moto">Moto</option> 
+                            <option value="camioneta">Camioneta</option>
+                    </select>
+                    <br>
+                </div>
+                <div class="form-label-group">
+                    <br>
+                    <input type="text" name="correo" class="form-control" placeholder="Usuario" [(ngModel)]="usuarioActual">
+                  <br>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)=" AltaAutoCliente()">Ingresar</button>
+                <hr class="my-4">
+              </form>
+            </div>
+          </div>
+    </div>
+    <div class="col" id='tabla'>
+        <table class="table" style="margin-top: 10%"> 
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">patente</th>
+                <th scope="col">marca</th>
+                <th scope="col">color</th>
+                <th scope="col">kilometros</th>
+                <th scope="col">tipo</th>
+                <th scope="col">Usuario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let a of autos" >
+                <th scope="row">•</th>
+                <td>{{a.patente}}</td>
+                <td>{{a.marca}}</td>
+                <td>{{a.color}}</td>
+                <td>{{a.kilometros}}</td>
+                <td>{{a.tipo}}</td>
+                <td>{{a.usuario}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <app-pdfgenerator [tabla]=getDatosTabla()></app-pdfgenerator>
+        </div>
+  </div>
+    <div *ngIf="error">
+        <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+            <div class="card carta mt-5 " style="background: rgb(255, 73, 73); color: rgb(255, 255, 255);">
+                <label class="card-title text-center mt-3">{{mensajeError}}</label>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="cargando">
+        <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+            <div class="card carta mt-5 " style="background: rgb(48, 114, 255); color: rgb(255, 255, 255);">
+                <label class="card-title text-center mt-3">{{mensajeError}}</label>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="mensaje">
+        <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+            <div class="card carta mt-5 " style="background: rgb(49, 255, 100); color: rgb(255, 255, 255); text-align: center;">
+                <label class="card-title text-center mt-3">{{mensajeError}}</label>
+            </div>
+        </div>
+    </div>
+  </div>
+  

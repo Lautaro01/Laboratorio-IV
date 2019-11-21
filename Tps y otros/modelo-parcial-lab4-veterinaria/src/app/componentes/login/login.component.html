@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+        <div class="card carta mt-5">
+          <div class="card-body">
+            <h2 class="card-title text-center">Iniciar Sesion</h2>
+            <form class="form-signin">
+              <div class="form-label-group">
+                  <input type="text" name="correo" class="form-control" placeholder="Correo Electronico" [(ngModel)]="correo">
+                <br>
+              </div>
+
+              <div class="form-label-group">
+                  <input type="password" name="contraseña" class="form-control" placeholder="Contraseña" [(ngModel)]="clave">
+                <br>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="ingresar()">Ingresar</button>
+              <hr class="my-4">
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="registro()" >Registrarse</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="error">
+        <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+            <div class="card carta mt-5 " style="background: rgb(255, 73, 73); color: rgb(255, 255, 255);">
+                <label class="card-title text-center mt-3">{{mensajeError}}</label>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="cargando">
+            <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+                <div class="card carta mt-5 " style="background: rgb(73, 146, 255); color: rgb(255, 255, 255);">
+                    <label class="card-title text-center mt-3">Iniciando sesion...</label>
+                </div>
+            </div>
+        </div>
+  </div>

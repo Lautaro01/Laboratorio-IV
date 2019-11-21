@@ -1,0 +1,25 @@
+<div class="col" id='tabla'>
+    <div class="form-label-group ">
+        <label for="tipo">Traer usuarios de tipo:</label>
+        <select name="Tipo" class="custom-select" aria-placeholder="Tipo de usuario" (change)=traerPorTipoHTML($event)>
+            <option selected></option> 
+            <option value='profesor'>Profesor</option> 
+            <option value='alumno'>Alumno</option> 
+        </select>
+        <br>
+        </div>
+    <table class="table" style="margin-top: 10%">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Correo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuariosTabla" >
+            <th scope="row">•</th>
+            <td>{{usuario.email}}</td>
+            </tr>
+        </tbody>
+        </table>
+</div>

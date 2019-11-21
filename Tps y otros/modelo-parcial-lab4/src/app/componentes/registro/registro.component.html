@@ -1,0 +1,57 @@
+<div class="container">
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+            <div class="card carta mt-5">
+              <div class="card-body">
+                <h2 class="card-title text-center">Registro</h2>
+                <form class="form-signin">
+                  <div class="form-label-group">
+                      <input type="text" name="correo" class="form-control" placeholder="Correo Electronico" [(ngModel)]="usuario.email">
+                    <br>
+                  </div>
+    
+                  <div class="form-label-group">
+                      <input type="password" name="contraseña" class="form-control" placeholder="Contraseña" [(ngModel)]="usuario.clave">
+                    <br>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="tipo">Tipo de usuario:</label>
+                        <select name="Tipo" class="custom-select" aria-placeholder="Tipo de usuario" [(ngModel)]="usuario.tipo">
+                                <option value="alumno">Alumno</option> 
+                                <option value="profesor">Profesor</option>
+                                <option value="admin">Admin</option>
+                        </select>
+                        <br>
+                    </div>
+                  <hr class="my-4">
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="registrarUusario()">¡Registrarme!</button>
+                  <p style="text-align: center;"><a [routerLink]="['../']">Volver al login</a></p>
+                  <br>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="error">
+            <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+                <div class="card carta mt-5 " style="background: rgb(255, 73, 73); color: rgb(255, 255, 255);">
+                    <label class="card-title text-center mt-3">{{mensajeError}}</label>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="cargando">
+            <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+                <div class="card carta mt-5 " style="background: rgb(48, 114, 255); color: rgb(255, 255, 255);">
+                    <label class="card-title text-center mt-3">{{mensajeError}}</label>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="mensaje">
+            <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+                <div class="card carta mt-5 " style="background: rgb(49, 255, 100); color: rgb(255, 255, 255); text-align: center;">
+                    <label class="card-title text-center mt-3">{{mensajeError}}</label>
+                    <a (click)="volver()">Volver al login</a>
+                </div>
+            </div>
+        </div>
+      </div>

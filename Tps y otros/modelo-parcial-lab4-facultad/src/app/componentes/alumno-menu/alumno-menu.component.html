@@ -1,0 +1,67 @@
+<div class="container">
+    <!-- <app-nombreytipo [nombre]="usuarioActual" [tipo]="'cliente'"></app-nombreytipo> -->
+    <div class="row">
+    <div class="col">
+        <div class="card carta mt-5">
+            <div class="card-body">
+              <h2 class="card-title text-center">Incirbise a Materias</h2>
+              <form class="form-signin">
+                  <div class="form-label-group">
+                      <label for="tipo">Materias Disponibles:</label>
+                      <select name="Tipo" class="custom-select" [(ngModel)]="materiaAnotarme" (change)=materiaElejida($event)>
+                          <option *ngFor="let materia of materiasId" value={{materia.id}}>{{materia.nombre}}</option> 
+                      </select>
+                      <br>
+                  </div>
+                  <br>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="anotarmeMateria()">Anotarme</button>
+                <hr class="my-4">
+              </form>
+            </div>
+          </div>
+    </div>
+    <div class="col" id='tabla'>
+        <table class="table" style="margin-top: 10%"> 
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cuatrimestre</th>
+                <th scope="col">Profesor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let a of materiasAnotadas" >
+                <th scope="row">•</th>
+                <td>{{a.nombre}}</td>
+                <td>{{a.cuatrimestre}}</td>
+                <td>{{a.profesor}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <app-pdfgenerator [tabla]=getDatosTabla()></app-pdfgenerator> -->
+        </div>
+  </div>
+    <div *ngIf="error">
+        <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+            <div class="card carta mt-5 " style="background: rgb(255, 73, 73); color: rgb(255, 255, 255);">
+                <label class="card-title text-center mt-3">{{mensajeError}}</label>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="cargando">
+        <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+            <div class="card carta mt-5 " style="background: rgb(48, 114, 255); color: rgb(255, 255, 255);">
+                <label class="card-title text-center mt-3">{{mensajeError}}</label>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="mensaje">
+        <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+            <div class="card carta mt-5 " style="background: rgb(49, 255, 100); color: rgb(255, 255, 255); text-align: center;">
+                <label class="card-title text-center mt-3">{{mensajeError}}</label>
+            </div>
+        </div>
+    </div>
+  </div>
+  

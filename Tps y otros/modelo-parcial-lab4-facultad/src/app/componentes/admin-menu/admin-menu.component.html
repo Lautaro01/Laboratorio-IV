@@ -1,0 +1,85 @@
+<div class="container">
+        <!-- <app-nombreytipo [nombre]="usuarioActual" [tipo]="'cliente'"></app-nombreytipo> -->
+        <div class="row">
+        <div class="col">
+            <div class="card carta mt-5">
+                <div class="card-body">
+                  <h2 class="card-title text-center">Alta Materias</h2>
+                  <form class="form-signin">
+                    <div class="form-label-group">
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombre" [(ngModel)]="nuevaMateria.nombre">
+                      <br>
+                    </div>
+      
+                    <div class="form-label-group">
+                        <input type="number" name="marca" class="form-control" placeholder="Cuatrimestre" [(ngModel)]="nuevaMateria.cuatrimestre">
+                      <br>
+                    </div>
+                    <div class="form-label-group">
+                        <input type="number" name="color" class="form-control" placeholder="Cupos" [(ngModel)]="nuevaMateria.cupos">
+                      <br>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="tipo">Profesor:</label>
+                        <select name="Tipo" class="custom-select" [(ngModel)]="nuevaMateria.profesor">
+                            <option *ngFor="let profe of profesSelect" value={{profe.email}}>{{profe.email}}</option> 
+                        </select>
+                        <br>
+                    </div>
+                    <br>
+                    <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)=" AltaMateriasMenu()">Ingresar Materia</button>
+                    <hr class="my-4">
+                  </form>
+                </div>
+              </div>
+        </div>
+        <div class="col" id='tabla'>
+                <table class="table" style="margin-top: 10%">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Cuatrimestre</th>
+                            <th scope="col">Cupos</th>
+                            <th scope="col">Profesor</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let materia of materiasTabla" >
+                            <th scope="row">•</th>
+                            <td>{{materia.nombre}}</td>
+                            <td>{{materia.cuatrimestre}}</td>
+                            <td>{{materia.cupos}}</td>
+                            <td>{{materia.profesor}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+              <!-- <app-pdfgenerator [tabla]=getDatosTabla()></app-pdfgenerator> -->
+        </div>
+      </div>
+      <div class="row">
+            <app-admin-filtro></app-admin-filtro>
+      </div>
+        <div *ngIf="error">
+            <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+                <div class="card carta mt-5 " style="background: rgb(255, 73, 73); color: rgb(255, 255, 255);">
+                    <label class="card-title text-center mt-3">{{mensajeError}}</label>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="cargando">
+            <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+                <div class="card carta mt-5 " style="background: rgb(48, 114, 255); color: rgb(255, 255, 255);">
+                    <label class="card-title text-center mt-3">{{mensajeError}}</label>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="mensaje">
+            <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+                <div class="card carta mt-5 " style="background: rgb(49, 255, 100); color: rgb(255, 255, 255); text-align: center;">
+                    <label class="card-title text-center mt-3">{{mensajeError}}</label>
+                </div>
+            </div>
+        </div>
+      </div>
+      
