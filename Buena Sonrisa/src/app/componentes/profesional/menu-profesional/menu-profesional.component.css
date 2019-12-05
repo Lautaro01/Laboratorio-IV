@@ -1,0 +1,85 @@
+header{
+    background: rgb(88, 75, 201);
+    padding: 1rem;
+}
+
+.navegacion ul{
+    margin: 0;
+    padding: 0.5rem;
+    list-style: none;
+    display:flex;
+    justify-content: space-around;
+}
+
+/* .bg{
+     background: url('../../../../../src/assets/fondo/fondo4.gif');
+    background-size: 100% 120%; 
+} */
+
+.navegacion ul li{
+    display: inline-block;
+}
+
+.navegacion ul li a{
+    text-decoration: none;
+    transition-duration: 0.3s;
+    padding: 1rem ;
+    color: white;
+    font-size: 2vmax;
+}
+
+.navegacion ul li a:hover{
+    color: white;
+    /* background:url(../../../../assets/fondo/fondo3.gif) center; */
+    font-size: 2.5vmax;
+    transition-duration: 0.3s;
+}
+
+header{
+    padding: 0;
+    
+}
+
+.logo{
+    text-align: center;
+    font-size: 3vmax;
+    color: white;
+    padding: 0.5rem 1rem;
+    background: rgb(95, 82, 163);
+    transition-duration: 0.7s;
+}
+
+/* .texto-s:hover{
+    color: rgba(21, 0, 46, 0.863);
+} */
+
+/* .logo:hover{
+    padding: 5rem 1rem;
+    text-align: center;
+    transition-duration: 0.7s;
+    /* background: url(../../../../assets/fondo/fondoHeader.gif) no-repeat center center/ cover;
+} */
+
+@media(max-width: 640px){
+
+    .navegacion ul li a{
+        padding:0;
+    }
+    header{
+        align-items: center;
+    }
+    .logo{
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .logo:hover{
+        padding: 4rem 1rem;
+    }
+
+    .navegacion ul{
+        margin: 0;
+        padding: 0.5rem;
+    }
+
+}

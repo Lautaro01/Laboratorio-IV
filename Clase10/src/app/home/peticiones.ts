@@ -21,7 +21,7 @@ export class PeticionesService {
       };
 
       console.log("estoy en agregar auto y voy a mandar el token" + token);
-      this.http.post('http://192.168.2.26:3003/auto/',auto,header).subscribe(
+      this.http.post('http://192.168.0.16:3003/auto/',auto,header).subscribe(
         respuesta =>{
           console.log("resouesta auto" + JSON.stringify(respuesta));
         }
@@ -39,6 +39,6 @@ export class PeticionesService {
       };
 
       console.log("estoy en verificar y voy a mandar" + token);
-      return this.http.get('http://192.168.2.26:3003/auto/',header);
+      return this.http.get('http://192.168.0.16:3003/auto/',header);
     }
 }

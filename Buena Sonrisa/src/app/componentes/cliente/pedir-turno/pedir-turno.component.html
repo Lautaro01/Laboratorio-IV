@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+    <div class="col">
+            <div class="card carta mt-5">
+                <div class="card-body">
+                    <h2 class="card-title text-center">TURNO</h2>
+                    <form class="form-signin">
+                    <div class="form-label-group">
+                        <label for="fecha">Elija una fecha para su turno</label>
+                        <input type="date" min="2019-12-03" max="2020-03-01" name="fecha" class="form-control" [(ngModel)]="turno.fecha">
+                        <br>
+                    </div>
+                    <div class="form-label-group">
+                            <label for="fecha">Elija una hora para su turno</label>
+                            <input type="time"  min="08:00:00" max="19:00:00" name="fecha" class="form-control" [(ngModel)]="turno.hora">
+                            <br>
+                        </div>
+
+                    <div class="form-label-group">
+                        <label for="tipo">Elija un profecional con el cual quiere atenderse:</label>
+                        <select name="Tipo" class="custom-select" [(ngModel)]="turno.profesional">
+                            <option *ngFor="let profe of profesionales" value={{profe.correo}}>{{profe.correo}}</option> 
+                        </select>
+                        <br>
+                    </div>
+                    <br>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="altaTurno()">Pedir turno!</button>
+                <hr class="my-4">
+                </form>
+        </div>
+        </div>
+    </div>
+    <div class="col-7" id='tabla'>
+            <table class="table" style="margin-top: 10%; background-color: rgb(255, 255, 255);">
+                    <thead style="text-align: center;">
+                        <tr>
+                            <th colspan="5">Mis turnos</th>
+                        </tr>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Profesional</th>
+                        <th scope="col">id sala</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let turno of misTurnos" >
+                        <th scope="row">•</th>
+                        <td>{{turno.fecha}}</td>
+                        <td>{{turno.hora}}</td>
+                        <td>{{turno.profesional}}</td>
+                        <td>{{turno.id}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+          <!-- <app-pdfgenerator [tabla]=getDatosTabla()></app-pdfgenerator> -->
+    </div>
+    <div style="width: 100%; margin: 0 auto;" class="mt-5" *ngIf="mensaje != null">
+            <div style="width: 90%; margin: 0 auto; padding: 20px; background-color: red; border-radius: 50px; font-size: 2rem; color: aliceblue; text-align: center;" *ngIf="!turnoValido">
+                <p>{{mensaje}}</p>
+            </div>
+            <div style="width: 90%; margin: 0 auto; padding: 20px; background-color: rgb(0, 202, 34); border-radius: 50px; font-size: 2rem; color: aliceblue; text-align: center;" *ngIf="turnoValido">
+                    <p>{{mensaje}}</p>
+                </div>
+            <div style="width: 30%; margin: 0 auto; background-color: rgb(55, 75, 255); border-radius: 50px; font-size: 2rem; color: aliceblue; text-align: center;" *ngIf="cargando">
+                <p>Cargando turno...</p>
+            </div>
+    </div>
+</div>

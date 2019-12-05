@@ -1,0 +1,12 @@
+<div class="container">
+    <div style="width: 50%; margin: auto; background-color: rgb(255, 255, 255); border-radius: 50px; text-align: center;" class="mt-5">
+        <img src="{{usuario.foto}}" class="fotoRedonda" *ngIf="usuario.foto != ''">
+        <div class="card-body" style="padding: 2rem 2rem 2rem 2rem;">
+            <h5 class="card-title">Datos del usuario</h5>
+            <p class="card-text">Nombre: {{usuario.nombre}}</p>
+            <p class="card-text">Apellido: {{usuario.apellido}}</p>
+            <p class="card-text">Correo Electronico: {{usuario.correo}}</p>
+            <button (click)="cerrarSesion()" class="btn btn-primary">Cerrar Sesion</button>
+        </div>
+        </div>
+</div>

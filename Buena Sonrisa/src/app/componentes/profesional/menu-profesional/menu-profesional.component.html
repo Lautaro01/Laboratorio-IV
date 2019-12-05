@@ -1,0 +1,18 @@
+<header>
+        <div class="logo">
+                <p class="texto-s" >Buena Sonrisa</p>
+        </div>
+        <nav class="navegacion">
+        <ul>
+        <li>
+        <a [routerLink]="['atender-cliente']" routerLinkActive="router-link-active">Turnos de pacientes</a>
+        </li>
+        <li>
+        <a [routerLink]="['perfil']" routerLinkActive="router-link-active">Perfil</a>
+        </li>
+        </ul>
+        </nav>
+</header>
+<div>
+    <router-outlet></router-outlet>
+</div>

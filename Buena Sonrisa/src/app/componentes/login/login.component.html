@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">    
+        <div class="col">
+                <!-- style="margin-top: 30%; margin-right:10%; margin-left: 10%;" -->
+            <div class="card bg-light mb-3" style="margin: auto; margin-top:20%; width: 60%;"> 
+            <div class="card-header"><h1 class="card-title" style="text-align: center;">Iniciar Sesion</h1></div>
+            <div class="card-body">
+                    <form>
+                        <br>
+                        <div class="form-group">
+                        <label for="exampleInputEmail1">Correo Electronico</label>
+                        <input type="email" class="form-control" name="correo" placeholder="ingrese su correo electronico" [(ngModel)]="correo">
+                        </div><br>
+                        <div class="form-group">
+                        <label for="exampleInputPassword1">Contraseña</label>
+                        <input type="password" class="form-control" name="clave" placeholder="ingrese su contraseña" [(ngModel)]="clave">
+                        <small>Recuerde no compartir sus datos personales con nadie!</small>
+                        </div>
+                        <div style="width: 90%; margin: auto; margin-top: 10%;">
+                            <button class="btn btn-primary btn-block" style="font-size: 2rem;" (click)="iniciarSecion()">Ingresar</button><br>
+                            <button class="btn btn-primary btn-block" style="font-size: 2rem;" [routerLink]="['/registro']" >Registrarse</button><br>
+                            <a href="">¿Olvido su contraseña? ¡click aqui!</a>
+                        </div>
+                    </form>
+            </div>
+            </div>
+        </div>
+        <div class="col">
+            <div style="margin-top:20%; width: 75%; background-color: rgba(240, 248, 255, 0.521); padding: 5%;">
+                <h1 class="titular-login">Bienvenido a Buena Sonrisa</h1>
+                <p class="texto-login">La clínica Buena Sonrisa, especialista en salud
+                    dental, cuenta actualmente con siete consultorios
+                    y dos laboratorios.
+                    Con mas de cientos de pacientes en todo el pais
+                    Buena Sonrisa 
+                    cuenta con la mejor atencion para tus dientes :)</p>
+            </div>
+        </div>
+        <div style="width: 100%; margin: 0 auto;">
+                <div style="width: 30%; margin: 0 auto; background-color: red; border-radius: 50px; font-size: 2rem; color: aliceblue; text-align: center;" *ngIf="error">
+                    <p>{{mensaje}}</p>
+                </div>
+                <div style="width: 30%; margin: 0 auto; background-color: rgb(55, 75, 255); border-radius: 50px; font-size: 2rem; color: aliceblue; text-align: center;" *ngIf="cargando">
+                    <p>Iniciando sesion...</p>
+                </div>
+        </div>
+    </div>
+</div>

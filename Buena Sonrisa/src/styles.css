@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+.bg{
+    background:url('../src/assets/bg-dentista.png') no-repeat center center / cover;
+    height: 100vh;
+}
+
+.titular-login{
+    font-size: 5rem;
+}
+
+.texto-login
+{
+    font-size: 1.5rem; 
+    line-height:40px;
+    color: rgb(103, 109, 122);
+}

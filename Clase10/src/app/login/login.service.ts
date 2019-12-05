@@ -1,6 +1,6 @@
 import { Router } from "@angular/router";
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 
 @Injectable()
@@ -16,7 +16,7 @@ export class LoginService{
     {
       this.cliente.cliente.user = usuario;
       this.cliente.cliente.pass = clave;
-      return this.http.post('http://192.168.2.26:3003/login/',this.cliente);
+      return this.http.post('http://192.168.0.16:3003/login/',this.cliente);
     }
 
     auth()
@@ -30,13 +30,13 @@ export class LoginService{
       };
 
       console.log("estoy en verificar y voy a mandar" + token);
-      this.http.post('http://192.168.2.26:3003/auto/',"",header).subscribe(
+      this.http.post('http://192.168.0.16:3003/auto/',"",header).subscribe(
         respuesta =>{
           console.log("resouesta verificar" + JSON.stringify(respuesta));
         }
       );
 
-      this.http.get('http://192.168.2.26:3003/auto/',header).subscribe(
+      this.http.get('http://192.168.0.16:3003/auto/',header).subscribe(
         respuesta =>{
           console.log("get de auto" + JSON.stringify(respuesta));
         }
@@ -52,7 +52,7 @@ export class LoginService{
     cargarUno(){
       this.cliente.cliente.user = "usuario";
       this.cliente.cliente.pass = "123456";
-      this.http.post('http://192.168.2.26:3003/clientes/',this.cliente).subscribe(
+      this.http.post('http://192.168.0.16:3003/clientes/',this.cliente).subscribe(
         respuesta => {
           console.log(respuesta);
         }

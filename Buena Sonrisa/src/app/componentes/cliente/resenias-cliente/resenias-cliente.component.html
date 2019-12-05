@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6" id='tabla'>
+            <table class="table" style="margin-top: 10%; background-color: rgb(255, 255, 255);">
+                <thead style="text-align: center;">
+                    <tr>
+                        <th colspan="5">Mis Reseñas</th>
+                    </tr>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Profesional</th>
+                    <th scope="col">reseña</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let resenia of misResenias" >
+                    <th scope="row">•</th>
+                    <td>{{resenia.fecha}}</td>
+                    <td>{{resenia.hora}}</td>
+                    <td>{{resenia.profesional}}</td>
+                    <td>{{resenia.reseniaTexto}}</td>
+                    <td><button class="btn btn-primary" (click)="encuesta()">Hacer encuesta</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6" id='tabla2' *ngIf="encuestaBolean">
+                <div class="card carta mt-5">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">Encuesta</h2>
+                            <form class="form-signin">
+                            <div class="form-label-group">
+                                <label for="fecha">Informenos de como se sintio en nuestra clinica.</label>
+                                <br>
+                                <label for="">¿Como valora nuestro servicio? del 0 al 5 </label>
+                                <input type="range" class="custom-range" min="0" max="5" id="customRange2" (change)="rango($event)">
+                                <label for="">{{rangoValor}}</label>
+                                <br>
+                                <label for="">¿Volveria a nuestra clinca?</label>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="volveriaSi" name="volveria" class="custom-control-input">
+                                    <label class="custom-control-label" for="volveriaSi">Si</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="volveriaNo" name="volveria" class="custom-control-input">
+                                    <label class="custom-control-label" for="volveriaNo">No</label>
+                                </div>
+                                <label for="">¿Recomendaria nuestro servicio?  </label>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="recomendariaUno" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="recomendariaUno">Si</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                        <input type="radio" id="recomendariaDos" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="recomendariaDos">Si, y ya lo hice</label>
+                                    </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="recomendariaTres" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="recomendariaTres">No, nunca</label>
+                                </div>
+                                <label for="">Dejanos un comentario</label>
+                                <textarea style="width: 90%; height: 100px;" name="resenia"></textarea>
+                                <br>
+                            </div>
+                            <br>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="dejarEncuesta()">Dajar encuesta</button>
+                        <hr class="my-4">
+                        </form>
+                </div>
+                </div>
+        </div>
+        <div *ngIf="encuestaMensaje" style="text-align: center; background-color: green; width: 250px; height: 50px; color: rgb(255, 255, 255); margin-top: 15%; border-radius: 20px;">
+            <p>{{mensaje}}</p>
+        </div>
+    </div>
+</div>

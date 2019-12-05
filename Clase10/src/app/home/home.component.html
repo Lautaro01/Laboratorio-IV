@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="col" id='tabla'>
       <table class="table" style="margin-top: 10%">
           <thead>
             <tr>
@@ -32,8 +32,10 @@
             </tr>
           </tbody>
         </table>
-
-        </div>
-
+  </div>
 </div>
+<button (click)='descargarPDF()'>Descargar pdf</button>
+<input type="file" id="foto" (change)="handleFileSelect($event)">
+<re-captcha (resolved)="resolved($event)" siteKey="YOUR_SITE_KEY"></re-captcha>
 <button (click)="salir()">logout</button>
+<img src={{imagen}} alt="">

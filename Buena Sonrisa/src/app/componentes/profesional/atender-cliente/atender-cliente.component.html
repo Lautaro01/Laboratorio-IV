@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6" id='tabla'>
+                <table class="table" style="margin-top: 10%; background-color: rgb(255, 255, 255);">
+                        <thead >
+                            <tr style="text-align: center;">
+                                <th colspan="5">Mis turnos</th>
+                            </tr>
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col">Paciente</th>
+                            <th scope="col">Dar Reseña</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let turno of misTurnos" >
+                            <th scope="row">•</th>
+                            <td>{{turno.fecha}}</td>
+                            <td>{{turno.hora}}</td>
+                            <td>{{turno.cliente}}</td>
+                            <td><button (click)="darReseniaMostrar(turno.id)"> Atender y dar Reseña</button></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                <!-- <app-pdfgenerator [tabla]=getDatosTabla()></app-pdfgenerator> -->
+        </div>
+        <div class="col-6" id='tabla2' *ngIf="resenia">
+            <div class="card carta mt-5">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Reseña</h2>
+                        <form class="form-signin">
+                        <div class="form-label-group">
+                            <label for="fecha">Escriba un diagnostico o reseña para el pasiente {{clienteResenia.cliente}}</label>
+                            <br>
+                            <textarea style="width: 90%; height: 100px;" name="resenia" [(ngModel)]="reseniaObjeto.reseniaTexto"></textarea>
+                            <br>
+                        </div>
+                        <br>
+                    <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="darResenia()">Dar reseña y marcar como antendido</button>
+                    <hr class="my-4">
+                    </form>
+            </div>
+            </div>
+        </div>
+        <div style="width: 100%; margin: 0 auto;" class="mt-5" *ngIf="mensaje != null">
+            <div style="width: 30%; margin: 0 auto; background-color: rgb(0, 202, 34); border-radius: 50px; font-size: 2rem; color: aliceblue; text-align: center;" *ngIf="!resenia">
+                    <p>{{mensaje}}</p>
+                </div>
+        </div>
+    </div>
+</div>

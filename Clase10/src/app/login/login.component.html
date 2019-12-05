@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <div class="container text-center">
-  <div class="card" style="width: 18rem; margin: auto; margin-top: 10%">
+  <div class="card" style="width: 19rem; margin: auto; margin-top: 10%">
     <input type="text" name="usuario" class="text-center" id="" style="margin: 0.5rem; margin-top: 3rem" placeholder="Usuario" [(ngModel)]="usuario"><br>
     <input type="password" name="clave" class="text-center" id=""  placeholder="clave" style="margin: 0.5rem;" [(ngModel)]="clave"><br>
     <button (click)="ingresar()" class="btn btn-primary" style="margin: 0.5rem;">Entrar</button>
@@ -8,5 +8,7 @@
     <div class="card-footer text-muted">
         usuario= usuario | clave = 123456
       </div>
+      <re-captcha (resolved)="resolved($event)" siteKey="6LfWK8MUAAAAAEpubORfE34cBqlCTj22ovmyOuew"></re-captcha>
   </div>
 </div>
+

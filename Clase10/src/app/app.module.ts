@@ -9,18 +9,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './login/login.service';
 import { HomeComponent } from './home/home.component';
 import { PeticionesService } from './home/peticiones';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RecaptchaModule,
   ],
   providers: [LoginService, PeticionesService],
   bootstrap: [AppComponent]
